@@ -1,0 +1,135 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "WpfApp2-test/1.0.0": {
+        "dependencies": {
+          "FontAwesome.WPF": "4.7.0.9",
+          "MaterialDesignThemes": "4.3.0-ci62",
+          "SharpVectors": "1.7.6",
+          "XamlAnimatedGif": "2.0.2"
+        },
+        "runtime": {
+          "WpfApp2-test.dll": {}
+        }
+      },
+      "FontAwesome.WPF/4.7.0.9": {
+        "runtime": {
+          "lib/net40/FontAwesome.WPF.dll": {
+            "assemblyVersion": "4.7.0.37774",
+            "fileVersion": "4.7.0.9"
+          }
+        }
+      },
+      "MaterialDesignColors/2.0.4-ci62": {
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignColors.dll": {
+            "assemblyVersion": "2.0.4.62",
+            "fileVersion": "2.0.4.62"
+          }
+        }
+      },
+      "MaterialDesignThemes/4.3.0-ci62": {
+        "dependencies": {
+          "MaterialDesignColors": "2.0.4-ci62"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "4.3.0.62",
+            "fileVersion": "4.3.0.62"
+          }
+        }
+      },
+      "SharpVectors/1.7.6": {
+        "runtime": {
+          "lib/net5.0-windows/SharpVectors.Converters.Wpf.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Core.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Css.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Dom.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Model.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Rendering.Gdi.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Rendering.Wpf.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          },
+          "lib/net5.0-windows/SharpVectors.Runtime.Wpf.dll": {
+            "assemblyVersion": "1.7.6.0",
+            "fileVersion": "1.7.6.0"
+          }
+        }
+      },
+      "XamlAnimatedGif/2.0.2": {
+        "runtime": {
+          "lib/net5.0-windows7.0/XamlAnimatedGif.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WpfApp2-test/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FontAwesome.WPF/4.7.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SXE080rnyWMm9Dt0BZzMxh89/o9teuSaqL1N+0O/XM/F/HU8JuZA4XaEKxjBigwZPHHU3/udTa0QMYCHkmH43Q==",
+      "path": "fontawesome.wpf/4.7.0.9",
+      "hashPath": "fontawesome.wpf.4.7.0.9.nupkg.sha512"
+    },
+    "MaterialDesignColors/2.0.4-ci62": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-me1QdoHG9tMLdLWLKLMs3dWmnAOWVqjmmSLPunrl0G1sl8O5WlodL9AgthVVmzyrh+wxQeLQHz/kxEluLtfs9A==",
+      "path": "materialdesigncolors/2.0.4-ci62",
+      "hashPath": "materialdesigncolors.2.0.4-ci62.nupkg.sha512"
+    },
+    "MaterialDesignThemes/4.3.0-ci62": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kUJ0xmB8c/MsjJ08hX7gSj7RoOJDIRbeaP7mra7F3prO7a6UaudI3Udkf+my7ZtV8rPcpOJ8LsGd9UkHH0Hq1g==",
+      "path": "materialdesignthemes/4.3.0-ci62",
+      "hashPath": "materialdesignthemes.4.3.0-ci62.nupkg.sha512"
+    },
+    "SharpVectors/1.7.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4mdmSPJCUdA+7ig8rMl4MbJ0qB/oDOByCmLhRdDjG54+sGIIYI004vkR4uPbWYsjn/Fgdi55s0vLqO2nLL0jDg==",
+      "path": "sharpvectors/1.7.6",
+      "hashPath": "sharpvectors.1.7.6.nupkg.sha512"
+    },
+    "XamlAnimatedGif/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C2ux+lDeu07iRMgc/8zh4p+gxL2bdqoEVshPDfPTEc3pWD5TO3tO4C5fsuoc1SwlPHXEBFwG6cgBg3+DrqPaog==",
+      "path": "xamlanimatedgif/2.0.2",
+      "hashPath": "xamlanimatedgif.2.0.2.nupkg.sha512"
+    }
+  }
+}

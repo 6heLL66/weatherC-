@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "6t9y6msh7o6PhTfCdTruenz9Xs/petJTfht3/IPURbMeo8m9szzJgQdeTbgMDAXTXxWBJFkIaFd5n53qUY4HJQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\suzuya\\RiderProjects\\WpfApp2-test\\WpfApp2-test\\WpfApp2-test.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\suzuya\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
+    "C:\\Users\\suzuya\\.nuget\\packages\\materialdesigncolors\\2.0.4-ci62\\materialdesigncolors.2.0.4-ci62.nupkg.sha512",
+    "C:\\Users\\suzuya\\.nuget\\packages\\materialdesignthemes\\4.3.0-ci62\\materialdesignthemes.4.3.0-ci62.nupkg.sha512",
+    "C:\\Users\\suzuya\\.nuget\\packages\\sharpvectors\\1.7.6\\sharpvectors.1.7.6.nupkg.sha512",
+    "C:\\Users\\suzuya\\.nuget\\packages\\xamlanimatedgif\\2.0.2\\xamlanimatedgif.2.0.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FontAwesome.WPF 4.7.0.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FontAwesome.WPF",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
+}

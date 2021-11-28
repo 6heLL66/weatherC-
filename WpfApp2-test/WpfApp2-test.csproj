@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <RootNamespace>WpfApp2_test</RootNamespace>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+      <PackageReference Include="MaterialDesignThemes" Version="4.3.0-ci62" />
+      <PackageReference Include="SharpVectors" Version="1.7.6" />
+      <PackageReference Include="XamlAnimatedGif" Version="2.0.2" />
+    </ItemGroup>
+
+</Project>
