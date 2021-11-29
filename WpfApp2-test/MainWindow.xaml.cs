@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -33,11 +34,13 @@ namespace WpfApp2_test
         DateTime date;
         private List<string> cities = new List<string>();
         private ImageAwesome Loader = new ImageAwesome();
+        TextBlock errorBlock = new TextBlock();
 
         public MainWindow()
         {   
             SetCities();
             InitializeComponent();
+            Result.Children.Add(errorBlock);
         }
 
         private void StartLoading()
@@ -72,6 +75,10 @@ namespace WpfApp2_test
         {   
             StartLoading();
             SelectedCity.Text = SearchInput.Text;
+            HintsList.RowDefinitions.Clear();
+            HintsList.Children.Clear();
+            HintsContainer.Visibility = Visibility.Hidden;
+            errorBlock.Visibility = Visibility.Hidden;
             HttpClient client = new HttpClient();
             var response = await client.GetAsync(
                 $"http://api.openweathermap.org/data/2.5/weather?q={SelectedCity.Text}&units=metric&appid={apiKey}"
@@ -81,21 +88,24 @@ namespace WpfApp2_test
             if (resultJson.RootElement.GetProperty("cod").ToString() == "200")
             {   
                 EndLoading();
-                Debug.Write(resultJson.RootElement.ToString());
+                Debug.WriteLine("\n \n \n \n");
+                Debug.WriteLine(resultJson.RootElement.ToString());
                 date = new DateTime(1970, 1, 1, 0, 0, 0);
                 date = date.AddSeconds(resultJson.RootElement.GetProperty("dt").GetInt32());
                 country = resultJson.RootElement.GetProperty("sys").GetProperty("country").ToString();
-                DrawWeather(resultJson.RootElement.GetProperty("weather"), resultJson.RootElement.GetProperty("main"));
+                DrawWeather(resultJson.RootElement.GetProperty("weather"), resultJson.RootElement.GetProperty("main"), resultJson.RootElement.GetProperty("wind"));
                 return;
             }
-
-            TextBlock errorBlock = new TextBlock();
-            errorBlock.Text = responseString;
+            errorBlock.Visibility = Visibility.Visible;
+            errorBlock.Text = "Error: " + resultJson.RootElement.GetProperty("message");
+            errorBlock.FontSize = 36;
+            errorBlock.Foreground = Brushes.Red;
             EndLoading();
-            Result.Children.Add(errorBlock);
+            Weather.Children.Clear();
+            WeatherInfo.Children.Clear();
         }
 
-        private void DrawWeather(JsonElement weather, JsonElement main)
+        private void DrawWeather(JsonElement weather, JsonElement main, JsonElement wind)
         {   
             WeatherInfo.Children.Clear();
             TextBlock cityName = new TextBlock();
@@ -112,6 +122,70 @@ namespace WpfApp2_test
             WeatherInfo.Children.Add(cityName);
             WeatherInfo.Children.Add(dateBlock);
             Weather.Children.Clear();
+            WeatherParams.Children.Clear();
+            
+            TextBlock description = new TextBlock();
+            description.Text = weather[0].GetProperty("description").ToString();
+            description.FontSize = 26;
+            description.FontWeight = FontWeights.Bold;
+            description.Margin = new Thickness(220, 0, 0, 0);
+            description.SetValue(Grid.ColumnProperty, 1);
+            Weather.Children.Add(description);
+            
+            TextBlock pressure = new TextBlock();
+            Grid pressureGrid = new Grid();
+            SvgViewbox pressureIcon = new SvgViewbox();
+            pressureGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            pressureGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            pressureIcon.Source = new Uri("/images/Pressure.svg", UriKind.Relative);
+            pressureIcon.Width = 25;
+            pressureIcon.Height = 25;
+            pressureIcon.Margin = new Thickness(0, 0, 0, 5);
+            pressureIcon.SetValue(Grid.ColumnProperty, 0);
+            pressure.Text = main.GetProperty("pressure") + " hPa";
+            pressure.SetValue(Grid.RowProperty, 0);
+            pressure.FontSize = 19;
+            pressure.SetValue(Grid.ColumnProperty, 1);
+            pressureGrid.Children.Add(pressureIcon);
+            pressureGrid.Children.Add(pressure);
+            WeatherParams.Children.Add(pressureGrid);
+            
+            TextBlock humidity = new TextBlock();
+            Grid humidityGrid = new Grid();
+            SvgViewbox humidityIcon = new SvgViewbox();
+            humidityGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            humidityGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            humidityIcon.Source = new Uri("/images/Humidity.svg", UriKind.Relative);
+            humidityIcon.Width = 25;
+            humidityIcon.Height = 25;
+            humidityIcon.Margin = new Thickness(0, 0, 0, 5);
+            humidityIcon.SetValue(Grid.ColumnProperty, 0);
+            humidity.Text = main.GetProperty("humidity") + " %";
+            humidity.FontSize = 19;
+            humidityGrid.SetValue(Grid.RowProperty, 1);
+            humidity.SetValue(Grid.ColumnProperty, 1);
+            humidityGrid.Children.Add(humidityIcon);
+            humidityGrid.Children.Add(humidity);
+            WeatherParams.Children.Add(humidityGrid);
+            
+            TextBlock speed = new TextBlock();
+            Grid speedGrid = new Grid();
+            SvgViewbox speedIcon = new SvgViewbox();
+            speedGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            speedGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            speedIcon.Source = new Uri("/images/Wind.svg", UriKind.Relative);
+            speedIcon.Width = 25;
+            speedIcon.Height = 25;
+            speedIcon.Margin = new Thickness(0, 0, 0, 5);
+            speedIcon.SetValue(Grid.ColumnProperty, 0);
+            speed.Text = wind.GetProperty("speed") + " mps";
+            speed.FontSize = 19;
+            speedGrid.SetValue(Grid.RowProperty, 2);
+            speed.SetValue(Grid.ColumnProperty, 1);
+            speedGrid.Children.Add(speedIcon);
+            speedGrid.Children.Add(speed);
+            WeatherParams.Children.Add(speedGrid);
+            
             SvgViewbox weatherIcon = new SvgViewbox();
             TextBlock temp = new TextBlock();
             temp.Text = main.GetProperty("temp").ToString() + '°';
@@ -122,6 +196,7 @@ namespace WpfApp2_test
             weatherIcon.Height = 100;
             weatherIcon.SetValue(Grid.ColumnProperty, 0);
             temp.SetValue(Grid.ColumnProperty, 1);
+            Weather.Children.Add(WeatherParams);
             Weather.Children.Add(weatherIcon);
             Weather.Children.Add(temp);
         }
@@ -168,6 +243,7 @@ namespace WpfApp2_test
                             HintsList.RowDefinitions.Clear();
                             HintsList.Children.Clear();
                             HintsContainer.Visibility = Visibility.Hidden;
+                            SearchButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
                         };
                         hintBlock.Foreground = Brushes.Black;
                         hintBlock.Background = Brushes.White;

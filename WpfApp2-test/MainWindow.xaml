@@ -58,12 +58,11 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="0.1*"></ColumnDefinition>
                             <ColumnDefinition Width="0.4*"></ColumnDefinition>
-                            <ColumnDefinition Width="0.25*"></ColumnDefinition>
-                            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                            <ColumnDefinition Width="165"></ColumnDefinition>
+                            <ColumnDefinition Width="0.3*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="2" x:Name="WeatherParams">
                             <Grid.RowDefinitions>
-                                <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
