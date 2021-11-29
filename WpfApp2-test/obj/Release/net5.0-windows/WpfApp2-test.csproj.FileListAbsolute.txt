@@ -29,7 +29,6 @@ C:\Users\suzuya\RiderProjects\WpfApp2-test\WpfApp2-test\obj\Release\net5.0-windo
 C:\Users\suzuya\RiderProjects\WpfApp2-test\WpfApp2-test\obj\Release\net5.0-windows\WpfApp2-test.AssemblyInfoInputs.cache
 C:\Users\suzuya\RiderProjects\WpfApp2-test\WpfApp2-test\obj\Release\net5.0-windows\WpfApp2-test.AssemblyInfo.cs
 C:\Users\suzuya\RiderProjects\WpfApp2-test\WpfApp2-test\obj\Release\net5.0-windows\WpfApp2-test.csproj.CoreCompileInputs.cache
-C:\Users\suzuya\RiderProjects\WpfApp2-test\WpfApp2-test\obj\Release\net5.0-windows\WpfApp2-test.csproj.CopyComplete
 C:\Users\suzuya\RiderProjects\WpfApp2-test\WpfApp2-test\obj\Release\net5.0-windows\WpfApp2-test.dll
 C:\Users\suzuya\RiderProjects\WpfApp2-test\WpfApp2-test\obj\Release\net5.0-windows\ref\WpfApp2-test.dll
 C:\Users\suzuya\RiderProjects\WpfApp2-test\WpfApp2-test\obj\Release\net5.0-windows\WpfApp2-test.pdb
